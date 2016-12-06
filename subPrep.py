@@ -16,8 +16,14 @@ dir = os.listdir(workPath)
 # Check if folder contains video file
 for metaFile in dir:
     if metaFile[-3:] == "mkv":
+        videoFound = True
         break
-metaName = metaFile[0:-4]
+
+if videoFound:
+    metaName = metaFile[0:-4]
+else:
+    clipboard = "take from clipboard"
+    workPath = clipboard
 
 
 def scrapeSubtitleLink(url, bsTag):
